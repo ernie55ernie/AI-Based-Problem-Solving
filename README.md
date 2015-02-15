@@ -1,1 +1,1 @@
-# ai_basedproblemsolving
+# AI_BasedProblemSolving

@@ -3,8 +3,8 @@
 
 int main(){
 	char to[40], from[40];
-	//DepthFirstSearch ob;
-	BreadthFirstSearch ob;
+	DepthFirstSearch ob;
+	//BreadthFirstSearch ob;
 
 	// Add red line station connections to database.
 	ob.addInfo("淡水", "紅樹林", 3);
@@ -82,8 +82,54 @@ int main(){
 	ob.addInfo("木柵", "動物園", 2);
 
 	// Add yellow line station connections to database
+	ob.addInfo("蘆洲", "三民高中", 2);
+	ob.addInfo("三民高中", "徐匯中學", 2);
+	ob.addInfo("徐匯中學", "三和國中", 2);
+	ob.addInfo("三和國中", "三重國小", 2);
+	ob.addInfo("三重國小", "大橋頭", 3);
+	ob.addInfo("大橋頭", "台北橋", 2);
+	ob.addInfo("台北橋", "菜寮", 2);
+	ob.addInfo("菜寮", "三重", 2);
+	ob.addInfo("三重", "先嗇宮", 3);
+	ob.addInfo("先嗇宮", "頭前庄", 2);
+	ob.addInfo("頭前庄", "新莊", 2);
+	ob.addInfo("新莊", "輔大", 3);
+	ob.addInfo("輔大", "丹鳳", 2);
+	ob.addInfo("丹鳳", "迴龍", 3);
+	ob.addInfo("大橋頭", "民權西路", 3);
+	ob.addInfo("民權西路", "中山國小", 2);
+	ob.addInfo("中山國小", "行天宮", 2);
+	ob.addInfo("行天宮", "松江南京", 2);
+	ob.addInfo("松江南京", "忠孝新生", 2);
+	ob.addInfo("忠孝新生", "東門", 2);
+	ob.addInfo("東門", "古亭", 4);
+	ob.addInfo("古亭", "頂溪", 4);
+	ob.addInfo("頂溪", "永安市場", 2);
+	ob.addInfo("永安市場", "景安", 2);
+	ob.addInfo("景安", "南勢角", 2);
 	
 	// Add blue line station connections to database
+	ob.addInfo("永寧", "土城", 2);
+	ob.addInfo("土城", "海山", 2);
+	ob.addInfo("海山", "亞東醫院", 3);
+	ob.addInfo("亞東醫院", "府中", 2);
+	ob.addInfo("府中", "板橋", 2);
+	ob.addInfo("板橋", "新埔", 2);
+	ob.addInfo("新埔", "江子翠", 2);
+	ob.addInfo("江子翠", "龍山寺", 4);
+	ob.addInfo("龍山寺", "西門", 2);
+	ob.addInfo("西門", "台北車站", 3);
+	ob.addInfo("台北車站", "善導寺", 2);
+	ob.addInfo("善導寺", "忠孝新生", 2);
+	ob.addInfo("忠孝新生", "忠孝復興", 2);
+	ob.addInfo("忠孝復興", "忠孝敦化", 2);
+	ob.addInfo("忠孝敦化", "國父紀念館", 2);
+	ob.addInfo("國父紀念館", "市政府", 2);
+	ob.addInfo("市政府", "永春", 2);
+	ob.addInfo("永春", "後山埤", 2);
+	ob.addInfo("後山埤", "昆陽", 2);
+	ob.addInfo("昆陽", "南港", 2);
+	ob.addInfo("南港", "南港展覽館", 2);
 
 	cout << "From? ";
 

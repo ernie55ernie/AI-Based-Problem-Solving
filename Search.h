@@ -76,5 +76,24 @@ public:
 	bool routefound(){
 		return !btStack.empty();
 	}
+
+	// Return information on top of stack
+	MRTInfo getTOS(){
+		return btStack.top();
+	}
+
+	// Remove a connection.
+	void remove(MRTInfo m){
+		for(unsigned i = 0; i < informations.size(); i++)
+			if(informations[i].from == m.from &&
+				informations[i].to == m.to)
+				informations[i].from = "";
+	}
+
+	// Reset all skip fields.
+	void resetAllSkip(){
+		for(unsigned i = 0; i < informations.size(); i++)
+			informations[i].skip = false;
+	}
 };
 

@@ -1,10 +1,15 @@
 #include "DepthFirstSearch.h"
 #include "BreadthFirstSearch.h"
+#include "HillClimbingSearch.h"
+#include "LeastCostSearch.h"
 
 int main(){
 	char to[40], from[40];
-	DepthFirstSearch ob;
+	MRTInfo m;
+	//DepthFirstSearch ob;
 	//BreadthFirstSearch ob;
+	//HillClimbingSearch ob;
+	LeastCostSearch ob;
 
 	// Add red line station connections to database.
 	ob.addInfo("²H¤ô", "¬õ¾ðªL", 3);
@@ -138,12 +143,33 @@ int main(){
 
 	cin.getline(to, 40);
 
+	// Find multiple solutions.
+	for(;;){
+		// See if there is a connection.
+		ob.findroute(from, to);
+
+		// If no new route was found, then end.
+		if(!ob.routefound())break;
+
+		// Save the information on top-of-stack.
+		m = ob.getTOS();
+
+		ob.route(); // display the current route.
+
+		ob.resetAllSkip();	// reset the skip fields
+
+		// Remove last information in previous solution
+		// from the information database.
+		ob.remove(m);
+	}
+	/*
 	// See if there is a route between from and to.
 	ob.findroute(from, to);
 
 	// If there is a route, show it.
 	if(ob.routefound())
 		ob.route();
+	*/
 
 	system("pause");
 	return 0;

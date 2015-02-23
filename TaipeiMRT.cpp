@@ -2,6 +2,7 @@
 #include "BreadthFirstSearch.h"
 #include "HillClimbingSearch.h"
 #include "LeastCostSearch.h"
+#include "OptimalSearch.h"
 
 int main(){
 	char to[40], from[40];
@@ -9,7 +10,8 @@ int main(){
 	//DepthFirstSearch ob;
 	//BreadthFirstSearch ob;
 	//HillClimbingSearch ob;
-	LeastCostSearch ob;
+	//LeastCostSearch ob;
+	OptimalSearch ob;
 
 	// Add red line station connections to database.
 	ob.addInfo("²H¤ô", "¬õ¾ðªL", 3);
@@ -151,16 +153,20 @@ int main(){
 		// If no new route was found, then end.
 		if(!ob.routefound())break;
 
+		/*
 		// Save the information on top-of-stack.
 		m = ob.getTOS();
+		*/
 
 		ob.route(); // display the current route.
 
+		/*
 		ob.resetAllSkip();	// reset the skip fields
 
 		// Remove last information in previous solution
 		// from the information database.
 		ob.remove(m);
+		*/
 	}
 	/*
 	// See if there is a route between from and to.
@@ -170,6 +176,9 @@ int main(){
 	if(ob.routefound())
 		ob.route();
 	*/
+
+	// Display optimal solution.
+	ob.showOpt();
 
 	system("pause");
 	return 0;
